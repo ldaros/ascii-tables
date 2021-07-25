@@ -17,8 +17,6 @@ This is a row with only one cell
 
 Press **Create Table** to get something like:
 
-### Unicode (single line) table
-
 ```
 ┌──────────────────────────────────┬─────────┬────────────────────────┬────────────────┐
 │               Col1               │  Col2   │          Col3          │ Numeric Column │
