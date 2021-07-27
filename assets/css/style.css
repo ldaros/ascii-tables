@@ -1,73 +1,14 @@
+/* ------------------------------ General ------------------------------ */
 * {
   box-sizing: border-box;
+  margin: 0;
 }
 
 body {
   font-family: "Inter", sans-serif;
   background-color: #121212;
   color: #fff;
-  margin: 0;
-}
-
-.flex-col-center {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.flex-row-center {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-#plaint-logo {
-  margin-top: 50px;
-  margin-bottom: 80px;
-}
-
-#plaint-logo img {
-  width: 6em;
-}
-
-#plaint-logo h1 {
-  font-weight: bold;
-  margin-bottom: 0;
-}
-
-#plaint-logo h3 {
-  font-size: 1em;
-  font-weight: normal;
-  color: rgb(199, 199, 199);
-}
-
-.header img {
-  height: 2em;
-  width: auto;
-  margin-right: 20px;
-}
-
-.header h1 {
-  font-size: 1.5em;
-}
-
-#ascii-container {
-  margin-bottom: 100px;
-}
-
-#options-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 85vw;
-  height: 50px;
-  padding: 15px;
-  border-radius: 5px;
-  background-color: #2e2f32;
-}
-
-#options-container *:last-of-type {
-  margin: none;
+  gap: 100px;
 }
 
 select,
@@ -79,56 +20,14 @@ input {
   font-size: 0.8em;
 }
 
-label {
-  font-size: 0.9em;
-}
-
-.container-center {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  width: 100%;
-}
-
-.input,
-.output {
-  flex: 0.4;
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  text-align: center;
-  width: 40%;
-}
-
-.input textarea,
-.output textarea {
-  height: 70vh;
-  border: none;
-  border-radius: 10px;
-  padding: 15px;
-  resize: none;
-  background-color: #3d3e41;
-  color: #fff;
-}
-
-h2 {
-  font-size: 1.5em;
-}
-
-.button-container {
-  flex: 0.1;
-  display: flex;
-  flex-direction: column;
-}
+label { font-size: 0.9em; }
 
 button {
-  width: 8vw;
   height: 6vh;
   border: none;
   border-radius: 13px;
   background-color: #2c2c2e;
   color: #fff;
-  margin-bottom: 25px;
   text-align: right;
   padding: 0 20%;
   background-repeat: no-repeat;
@@ -141,119 +40,154 @@ button:hover {
   cursor: pointer;
 }
 
-button:active {
-  width: 7vw;
-  height: 5vh;
+button:active { background-color: #eeeeee; }
+
+footer {
+  font-size: 0.9em;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #b1b1b1;
 }
 
-#create {
-  background-image: url("../icons/right_arrow.svg");
-  color: #3cc255;
+/* ----------------------------- Containers ----------------------------- */
+.flex-col-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-#copy {
-  background-image: url("../icons/copy.svg");
+.flex-row-center {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
-#parse {
-  background-image: url("../icons/left_arrow.svg");
-  color: #2282db;
-  margin-bottom: 0;
+/* ------------------------------ Headers ------------------------------ */
+
+.header { margin-bottom: 10px; }
+
+.header img {
+  height: 2em;
+  width: auto;
+  margin-right: 20px;
 }
 
-#word-wrap {
-  width: 100%;
+.header h1 { font-size: 1.5em; }
+
+/* ----------------------------- Plaint Logo ----------------------------- */
+
+#plaint-logo { margin-top: 40px; }
+
+#plaint-logo img { width: 6em; margin-bottom: 10px;}
+
+#plaint-logo h1 {font-weight: bold;}
+
+#plaint-logo h3 {
+  font-size: 1em;
+  font-weight: normal;
+  color: #c7c7c7;
 }
 
-#wrap-input {
-  width: 60%;
-  height: 30vh;
+/* ---------------------------- ASCII Tables ---------------------------- */
+
+#ascii-tables {
+  width: 85vw;
+  display: grid;
+  grid-template-columns: 4fr 1fr 4fr;
+  gap: 10px;
+}
+
+/* The header */
+#ascii-tables .header {
+  grid-column: span 3;
+  justify-self: center;
+}
+
+/* The options */
+#options-container {          
+  grid-column: span 3;
+  justify-content: space-between;
+  height: 7vh;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #2e2f32;
+}
+
+/* -------- Input and Output areas -------- */
+.table-input {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.table-input textarea {
+  height: 70vh;
+  border: none;
   border-radius: 10px;
   padding: 15px;
   resize: none;
   background-color: #3d3e41;
   color: #fff;
-  margin-bottom: 15px;
+}
+
+.table-input h2 {
+  margin: 20px 0;
+  font-size: 1.5em;
+}
+
+
+/* --------------- Buttons -------------- */
+
+#button-container {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  gap: 15px;
+}
+
+#b-create {
+  background-image: url("../icons/right_arrow.svg");
+  color: #3cc255;
+}
+
+#b-copy { background-image: url("../icons/copy.svg"); }
+
+#b-parse {
+  background-image: url("../icons/left_arrow.svg");
+  color: #2282db;
+}
+
+/* ----------------------------- Word Wrap ----------------------------- */
+
+#word-wrap {
+  gap: 10px;
+  width: 85%;
+}
+
+
+/* Input Area */
+#wrap-input {
+  width: 100%;
+  height: 35vh;
+  border-radius: 10px;
+  padding: 15px;
+  resize: none;
+  background-color: #3d3e41;
+  color: #fff;
   border: none;
 }
 
+/* Options */
 #wrap-controls {
-  display: flex;
-  align-items: center;
-  margin-bottom: 60px;
   justify-content: space-around;
+  gap: 10px;
 }
 
-#wrap-controls * {
-  margin: 0 10px;
-}
+#wrap-length { width: 65px; }
 
-#wrap-controls *:last-child {
-  margin: 0 0;
-}
-
-#wrap-length {
-  width: 65px;
-}
-
-#bwrap {
+#b-wrap {
   background-image: url("../icons/snake.svg");
   color: #d746b7;
-  background-position: 20% 80%;
+  background-position: 20% 70%;
   width: 30%;
-}
-/* ----------------------- Footer ----------------------- */
-
-footer {
-  font-size: 0.9em;
-  margin-top: 20px;
-  text-align: center;
-  color: #b1b1b1;
-}
-
-/* ----------------------- Light Mode ----------------------- */
-
-@media (prefers-color-scheme: light) {
-  body {
-    background-color: #fff;
-    color: #000000;
-  }
-
-  header {
-    background-color: #1d1d1d;
-    color: #fff;
-  }
-
-  select,
-  input {
-    background-color: revert;
-    color: revert;
-    border: 1px solid #fff;
-  }
-
-  .input textarea,
-  .output textarea {
-    background-color: #fff;
-    color: #000;
-    border: 2px solid #000;
-  }
-
-  button {
-    background-color: #fff;
-    color: #000;
-    border: 1px solid #000;
-  }
-
-  button:hover {
-    background-color: #d8d8d8;
-    cursor: pointer;
-  }
-
-  #copy {
-    background-image: url("../icons/copy_light.svg");
-  }
-
-  footer {
-    color: #444444;
-  }
 }
