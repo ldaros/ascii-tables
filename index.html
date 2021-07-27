@@ -24,11 +24,14 @@
       </div>
 
       <!-- ASCII Tables -->
-      <div id="ascii" class="flex-col-center" onload="createTable()">
-        <span id="ascii-logo">
+      <div id="ascii-container" class="flex-col-center" onload="createTable()">
+        <!-- Header -->
+        <span class="flex-row-center header">
           <img src="assets/icons/logo.svg" />
           <h1>ASCII Tables</h1>
         </span>
+
+        <!-- Options -->
         <div id="options-container">
           <!-- Header Option -->
           <span class="option">
@@ -43,6 +46,7 @@
               <option value="none">None</option>
             </select>
           </span>
+
           <!-- Style Option -->
           <span class="option">
             <label for="style">Style:</label>
@@ -69,6 +73,7 @@
               <option value="html">HTML</option>
             </select>
           </span>
+
           <!-- Comment Option -->
           <span class="option">
             <label for="commenting">Comment Style:</label>
@@ -94,6 +99,7 @@
               <option value="pipe">|</option>
             </select>
           </span>
+
           <!-- Format Option -->
           <span class="option">
             <label
@@ -108,6 +114,7 @@
               onchange="createTable()"
             />
           </span>
+
           <!-- Trim Lines Option -->
           <span class="option">
             <label for="trim-input" title="Trim the input lines before parsing"
@@ -120,6 +127,7 @@
               onchange="createTable()"
             />
           </span>
+
           <!-- Separator Option -->
           <span class="option">
             <label
@@ -191,7 +199,7 @@ Pizza	G	420
       </div>
 
       <div id="word-wrap" class="flex-col-center">
-        <span id="ascii-logo">
+        <span class="header flex-row-center" id="wrap-header">
           <img src="assets/icons/wwrap-logo.svg" />
           <h1>Word Wrap</h1>
         </span>
