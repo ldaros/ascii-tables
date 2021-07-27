@@ -10,142 +10,146 @@
     />
     <link href="assets/css/style.css" rel="stylesheet" />
     <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/script.js"></script>
+    <script src="assets/js/ascii_tables.js"></script>
+    <script src="assets/js/wrap.js"></script>
   </head>
 
-  <body onload="createTable()">
-    <header>
-      <!-- The Logo -->
-      <span id="logo">
-        <img src="assets/icons/logo.svg" />
-        <h1>ASCII Tables</h1>
-      </span>
-
-      <div id="options-container">
-        <!-- Header Option -->
-        <span class="option">
-          <label for="hdr-style">Header:</label>
-          <select
-            id="hdr-style"
-            title="Select what should be used as a header"
-            onchange="createTable()"
-          >
-          <option value="top" selected="true">1st Row</option>
-          <option value="ssheet">Sheet</option>
-          <option value="none">None</option>
-          </select>
-        </span>
-
-        <!-- Style Option -->
-        <span class="option">
-          <label for="style">Style:</label>
-          <select
-            id="style"
-            title="Select the output format of the table"
-            onchange="createTable()"
-          >
-            <option value="unicode_single_line">Unicode</option>
-            <option value="unicode">Unicode (=)</option>
-            <option value="mysql">Mysql style</option>
-            <option value="separated">Separated</option>
-            <option value="compact">Compact</option>
-            <option value="rounded">Rounded</option>
-            <option value="bubbles">Bubbles</option>
-            <option value="girder">Girder</option>
-            <option value="dots">Dots</option>
-            <option value="gfm">Github</option>
-            <option value="reddit">Reddit</option>
-            <option value="rstGrid">rST Grid</option>
-            <option value="rstSimple">rST Simple</option>
-            <option value="jira">Jira</option>
-            <option value="mediawiki">MediaWiki</option>
-            <option value="html">HTML</option>
-          </select>
-        </span>
-
-        <!-- Comment Option -->
-        <span class="option">
-          <label for="commenting">Comment Style:</label>
-          <select
-            id="commenting"
-            title="Select a comment style to place to the left of the table"
-            onchange="createTable()"
-          >
-            <option value="none">""</option>
-            <option value="doubleslant">//</option>
-            <option value="hash">#</option>
-            <option value="doubledash">--</option>
-            <option value="percent">%</option>
-            <option value="docblock">*</option>
-            <option value="singlespace">" "</option>
-            <option value="quadspace">" &nbsp;&nbsp;&nbsp;"</option>
-            <option value="singlequote">'</option>
-            <option value="rem">REM</option>
-            <option value="c">C</option>
-            <option value="exclamation">!</option>
-            <option value="slantsplat">/* */</option>
-            <option value="xml">&lt;!----&gt;</option>
-            <option value="pipe">|</option>
-          </select>
-        </span>
-
-        <!-- Format Option -->
-        <span class="option">
-          <label
-            for="auto-format"
-            title="Center the headers and right-align numbers in the output table"
-            >Format:</label
-          >
-          <input
-            id="auto-format"
-            checked="true"
-            type="checkbox"
-            onchange="createTable()"
-          />
-        </span>
-
-        <!-- Trim Lines Option -->
-        <span clas="option">
-          <label for="trim-input" title="Trim the input lines before parsing"">Trim:</label>
-          <input
-            id="trim-input"
-            checked="true"
-            type="checkbox"
-            onchange="createTable()"
-          />
-        </span>
-
-        <!-- Separator Option -->
-        <span class="option">
-          <label
-            for="separator"
-            title="Identify character for custom separator, default is the tab character"
-            >Separator:</label
-          >
-          <input
-            id="separator"
-            type="text"
-            name="separator"
-            maxlength="1"
-            size="1"
-            onfocus="this.value = '';createTable()"
-            onkeyup="createTable()"
-          />
-        </span>
+  <body>
+    <div class="flex-col-center">
+      <!-- The Plaint Logo -->
+      <div class="flex-col-center" id="plaint-logo">
+        <img src="assets/icons/plaint-logo.svg" />
+        <h1>Plaint-Tools</h1>
+        <h3>The plain text toolbox.</h3>
       </div>
-    </header>
 
-    <div class="container-center">
-      <!-- Input Area -->
-      <div class="input">
-        <h2>Input</h2>
-        <textarea
-          class="form-control fixed-width"
-          wrap="off"
-          id="input"
-          onchange="createTable()"
-          onkeyup="createTable()"
-        >
+      <!-- ASCII Tables -->
+      <div id="ascii" class="flex-col-center" onload="createTable()">
+        <span id="ascii-logo">
+          <img src="assets/icons/logo.svg" />
+          <h1>ASCII Tables</h1>
+        </span>
+        <div id="options-container">
+          <!-- Header Option -->
+          <span class="option">
+            <label for="hdr-style">Header:</label>
+            <select
+              id="hdr-style"
+              title="Select what should be used as a header"
+              onchange="createTable()"
+            >
+              <option value="top" selected="true">1st Row</option>
+              <option value="ssheet">Sheet</option>
+              <option value="none">None</option>
+            </select>
+          </span>
+          <!-- Style Option -->
+          <span class="option">
+            <label for="style">Style:</label>
+            <select
+              id="style"
+              title="Select the output format of the table"
+              onchange="createTable()"
+            >
+              <option value="unicode_single_line">Unicode</option>
+              <option value="unicode">Unicode (=)</option>
+              <option value="mysql">Mysql style</option>
+              <option value="separated">Separated</option>
+              <option value="compact">Compact</option>
+              <option value="rounded">Rounded</option>
+              <option value="bubbles">Bubbles</option>
+              <option value="girder">Girder</option>
+              <option value="dots">Dots</option>
+              <option value="gfm">Github</option>
+              <option value="reddit">Reddit</option>
+              <option value="rstGrid">rST Grid</option>
+              <option value="rstSimple">rST Simple</option>
+              <option value="jira">Jira</option>
+              <option value="mediawiki">MediaWiki</option>
+              <option value="html">HTML</option>
+            </select>
+          </span>
+          <!-- Comment Option -->
+          <span class="option">
+            <label for="commenting">Comment Style:</label>
+            <select
+              id="commenting"
+              title="Select a comment style to place to the left of the table"
+              onchange="createTable()"
+            >
+              <option value="none">""</option>
+              <option value="doubleslant">//</option>
+              <option value="hash">#</option>
+              <option value="doubledash">--</option>
+              <option value="percent">%</option>
+              <option value="docblock">*</option>
+              <option value="singlespace">" "</option>
+              <option value="quadspace">" &nbsp;&nbsp;&nbsp;"</option>
+              <option value="singlequote">'</option>
+              <option value="rem">REM</option>
+              <option value="c">C</option>
+              <option value="exclamation">!</option>
+              <option value="slantsplat">/* */</option>
+              <option value="xml">&lt;!----&gt;</option>
+              <option value="pipe">|</option>
+            </select>
+          </span>
+          <!-- Format Option -->
+          <span class="option">
+            <label
+              for="auto-format"
+              title="Center the headers and right-align numbers in the output table"
+              >Format:</label
+            >
+            <input
+              id="auto-format"
+              checked="true"
+              type="checkbox"
+              onchange="createTable()"
+            />
+          </span>
+          <!-- Trim Lines Option -->
+          <span class="option">
+            <label for="trim-input" title="Trim the input lines before parsing"
+              >Trim:</label
+            >
+            <input
+              id="trim-input"
+              checked="true"
+              type="checkbox"
+              onchange="createTable()"
+            />
+          </span>
+          <!-- Separator Option -->
+          <span class="option">
+            <label
+              for="separator"
+              title="Identify character for custom separator, default is the tab character"
+              >Separator:</label
+            >
+            <input
+              id="separator"
+              type="text"
+              name="separator"
+              maxlength="1"
+              size="1"
+              onfocus="this.value = '';createTable()"
+              onkeyup="createTable()"
+            />
+          </span>
+        </div>
+
+        <div class="container-center">
+          <!-- Input Area -->
+          <div class="input">
+            <h2>Input</h2>
+            <textarea
+              class="form-control fixed-width"
+              wrap="off"
+              id="input"
+              onchange="createTable()"
+              onkeyup="createTable()"
+            >
 Col 1	Col 2	Col 3
 Banana	A	123	
 Tomato	B	51.5	
@@ -154,39 +158,67 @@ Lasagna	D	2
 Pasta	E	1993
 Tacos	F	69	
 Pizza	G	420
-        </textarea>
+            </textarea>
+          </div>
+
+          <!-- Buttons -->
+          <div class="button-container">
+            <!-- Create -->
+            <button id="create" onclick="createTable()">Create</button>
+
+            <!-- Copy -->
+            <button id="copy" onclick="copyOutputToClipboard()">
+              Copy <i class="fa fa-copy"></i>
+            </button>
+
+            <!-- Parse -->
+            <button id="parse" onclick="parseTableClick()">
+              Parse <i class="fa fa-table"></i>
+            </button>
+          </div>
+
+          <!-- Output Area -->
+          <div class="output">
+            <h2>Output</h2>
+            <textarea
+              id="output"
+              class="form-control fixed-width"
+              rows="8"
+              wrap="off"
+            ></textarea>
+          </div>
+        </div>
       </div>
 
-      <!-- Buttons -->
-      <div class="button-container">
-        <!-- Create -->
-        <button id="create" onclick="createTable()">Create</button>
+      <div id="word-wrap" class="flex-col-center">
+        <span id="ascii-logo">
+          <img src="assets/icons/wwrap-logo.svg" />
+          <h1>Word Wrap</h1>
+        </span>
 
-        <!-- Copy -->
-        <button id="copy" onclick="copyOutputToClipboard()">
-          Copy <i class="fa fa-copy"></i>
-        </button>
+        <textarea id="wrap-input"></textarea>
 
-        <!-- Parse -->
-        <button id="parse" onclick="parseTableClick()">
-          Parse <i class="fa fa-table"></i>
-        </button>
-      </div>
+        <div id="wrap-controls">
+          <button id="bwrap" onclick="wrapText()">Wrap</button>
 
-      <!-- Output Area -->
-      <div class="output">
-        <h2>Output</h2>
-        <textarea
-          id="output"
-          class="form-control fixed-width"
-          rows="8"
-          wrap="off"
-        ></textarea>
+          <label for="wrap-length">Length:</label>
+          <input type="number" id="wrap-length" value="80" min="1" max="999" />
+          <label for="wrap-comment">Comment:</label>
+          <select id="wrap-comment">
+            <option value="none">none</option>
+            <option value="doubleslant">//</option>
+            <option value="hash">#</option>
+            <option value="doubledash">--</option>
+            <option value="percent">%</option>
+            <option value="singlespace">" "</option>
+            <option value="quadspace">" &nbsp;&nbsp;&nbsp;"</option>
+            <option value="singlequote">'</option>
+            <option value="rem">REM</option>
+            <option value="c">C</option>
+            <option value="exclamation">!</option>
+          </select>
+        </div>
       </div>
     </div>
-    <footer>
-      Original by <a href="https://github.com/ozh">Ozh</a>. New design by Luan
-      Daros. See on <a href="https://github.com/ldaros/ascii-tables">Github</a>.
-    </footer>
   </body>
 </html>
