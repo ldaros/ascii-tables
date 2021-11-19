@@ -1,34 +1,11 @@
-# ascii-tables
+# plaint-tools
 
-Quickly format tables in plain tables.
+Some tools I use to format plain text for code commeting.
 
-New UI by Luan Daros.
+Use it here: https://ldaros.github.io/plaint-tools/
 
-Play with it: https://ldaros.github.io/ascii-tables/
+## Open Source Licenses
 
-### Input text like this
+ASCII Tables courtesy of: https://github.com/ozh/ascii-tables
 
-```
-Col1	Col2	Col3	Numeric Column
-Value 1	Value 2	123	10.0
-Separate	cols    with a tab or 4 spaces	-2,027.1
-This is a row with only one cell
-```
-
-Press **Create Table** to get something like:
-
-```
-┌──────────────────────────────────┬─────────┬────────────────────────┬────────────────┐
-│               Col1               │  Col2   │          Col3          │ Numeric Column │
-├──────────────────────────────────┼─────────┼────────────────────────┼────────────────┤
-│ Value 1                          │ Value 2 │ 123                    │           10.0 │
-│ Separate                         │ cols    │ with a tab or 4 spaces │       -2,027.1 │
-│ This is a row with only one cell │         │                        │                │
-└──────────────────────────────────┴─────────┴────────────────────────┴────────────────┘
-```
-
-## License
-
-Forked from https://github.com/ozh/ascii-tables
-
-WTFPL. Do whatever you want with it.
+Word Wrap courtesy of: https://github.com/jonschlinkert/word-wrap
