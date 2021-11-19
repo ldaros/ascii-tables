@@ -11,6 +11,17 @@ function wrap(str, options) {
     return str;
   }
 
+  // added code to clean the string:
+  for (var i = 0; i < str.length; i++) {
+    str = str.replace("\n", " ");
+  }
+  for (var i = 0; i < str.length; i++) {
+    str = str.replace("\r", " ");
+  }
+  for (var i = 0; i < str.length; i++) {
+    str = str.replace("  ", " ");
+  }
+
   var width = options.width || 50;
   var indent = typeof options.indent === "string" ? options.indent : "  ";
 
